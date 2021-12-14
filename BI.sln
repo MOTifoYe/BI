@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая 1"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая 2", "Практическая 2\Практическая 2.csproj", "{C93FD6B2-8F8B-49AC-A940-93FA4B76BE6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "меню и панели", "меню и панели\меню и панели.csproj", "{D9052E95-EE5F-4971-B58C-0069D229C2BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C93FD6B2-8F8B-49AC-A940-93FA4B76BE6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C93FD6B2-8F8B-49AC-A940-93FA4B76BE6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C93FD6B2-8F8B-49AC-A940-93FA4B76BE6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9052E95-EE5F-4971-B58C-0069D229C2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9052E95-EE5F-4971-B58C-0069D229C2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9052E95-EE5F-4971-B58C-0069D229C2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9052E95-EE5F-4971-B58C-0069D229C2BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
