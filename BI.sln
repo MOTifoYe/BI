@@ -13,11 +13,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTest", "WPFTest\WPFTest.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая 1", "Практическая 1\Практическая 1.csproj", "{B894691C-37C5-413C-9391-EE62AD3D14B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая 2", "Практическая 2\Практическая 2.csproj", "{C93FD6B2-8F8B-49AC-A940-93FA4B76BE6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая 2 (mvvm)", "Практическая 2\Практическая 2 (mvvm).csproj", "{C93FD6B2-8F8B-49AC-A940-93FA4B76BE6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "меню и панели", "меню и панели\меню и панели.csproj", "{D9052E95-EE5F-4971-B58C-0069D229C2BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая 2.1", "Практическая 2.1\Практическая 2.1.csproj", "{32978A6B-5F38-4C2E-9734-88EABE832371}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая 2.2.1", "Практическая 2.2.1\Практическая 2.2.1.csproj", "{AD3E746B-D73C-458E-BA65-13E99D0AFED8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{32978A6B-5F38-4C2E-9734-88EABE832371}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32978A6B-5F38-4C2E-9734-88EABE832371}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32978A6B-5F38-4C2E-9734-88EABE832371}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD3E746B-D73C-458E-BA65-13E99D0AFED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD3E746B-D73C-458E-BA65-13E99D0AFED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD3E746B-D73C-458E-BA65-13E99D0AFED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD3E746B-D73C-458E-BA65-13E99D0AFED8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
