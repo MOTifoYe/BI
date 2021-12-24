@@ -53,13 +53,18 @@ namespace меню_и_панели
 
         private void TextBlock_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-            TMessage.IsEnabled = TMessage.IsEnabled ? false : true;
+            TBMessage.IsEnabled = TBMessage.IsEnabled ? false : true;
         }
 
         private void About_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Description", "Message");
 
+        }
+
+        private void TBCheck_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TBMessage.IsEnabled = !TBMessage.IsEnabled;
         }
     }
 }

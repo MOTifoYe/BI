@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:меню_и_панели"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600
-        ">
+        Title="MainWindow" Height="180" Width="340">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -59,8 +58,6 @@
                 </MenuItem.Header>
             </MenuItem>
 
-            <Separator Template="{DynamicResource VerticalSeparator}"/>
-
             <ComboBox Width="65" Margin="0 3" SelectedIndex="1">
                 <TextBlock Text="50%"/>
                 <TextBlock Text="100%"/>
@@ -79,15 +76,15 @@
                     </MenuItem.Header>
                 </MenuItem>
             </MenuItem>
-        
+
         </Menu>
-        
+
         <ToolBar Grid.Row="1" Height="30" Width="100" Header="Tool Bar">
             <StackPanel Height="95" VerticalAlignment="Top" Width="100">
-                <TextBlock x:Name="TMessage" Text="Message" MouseDown="TextBlock_MouseDown"/>
-                <TextBlock Text="Check" MouseDown="TextBlock_MouseDown_1"/>
+                <TextBlock x:Name="TBMessage" Text="Message" MouseDown="Message_Click"/>
+                <TextBlock x:Name="TBCheck" Text="Check" MouseDown="TBCheck_MouseDown"/>
             </StackPanel>
         </ToolBar>
-        
+
     </Grid>
 </Window>
