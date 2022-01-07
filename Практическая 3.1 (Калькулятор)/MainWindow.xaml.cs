@@ -10,6 +10,7 @@ namespace Практическая_3._1__Калькулятор_
     /// </summary>
     public partial class MainWindow : Window
     {
+        string result;
         public MainWindow()
         {
             InitializeComponent();
@@ -17,7 +18,17 @@ namespace Практическая_3._1__Калькулятор_
 
         private string Calc(string v)
         {
-            return new DataTable().Compute(new Regex(@"[/*\-+]+$").Replace(v.Replace(",", "."), ""), null).ToString();
+            try
+            {
+                result = new DataTable().Compute(new Regex(@"[/*\-+]+$").Replace(v.Replace(",", "."), ""), null).ToString();
+            }
+            catch (Exception ex)
+            {
+                result = "0";
+                string message = $"Во время вычислений произошла ошибка.\nРезультат будет заменен нулём и\nпередан к дальнейшим преобразованиям.\n--\n{ex.Message}";
+                MessageBox.Show(message, "Ошибка!");
+            }
+            return result;
         }
 
         private void One_Click(object sender, RoutedEventArgs e) => tb1.Text += 1;
@@ -31,21 +42,37 @@ namespace Практическая_3._1__Калькулятор_
         private void Nine_Click(object sender, RoutedEventArgs e) => tb1.Text += 9;
         private void Zero_Click(object sender, RoutedEventArgs e) => tb1.Text += 0;
 
+        private void Clear_Click(object sender, RoutedEventArgs e) => tb1.Text = "";
         private void Plus_Click(object sender, RoutedEventArgs e) => tb1.Text += "+";
         private void Minus_Click(object sender, RoutedEventArgs e) => tb1.Text += "-";
-        private void Mul_Click(object sender, RoutedEventArgs e) => tb1.Text += "*";
-        private void Del_Click(object sender, RoutedEventArgs e) => tb1.Text += "/";
-        private void Clear_Click(object sender, RoutedEventArgs e) => tb1.Text = "";
+        private void Mul_Click(object sender, RoutedEventArgs e)
+        {
+            if (tb1.Text.Length > 0 && !(
+                    tb1.Text[tb1.Text.Length - 1].Equals('+') ||
+                    tb1.Text[tb1.Text.Length - 1].Equals('-') ||
+                    tb1.Text[tb1.Text.Length - 1].Equals('*') ||
+                    tb1.Text[tb1.Text.Length - 1].Equals('/') ))
+            { tb1.Text += "*"; }
+        }
+
+        private void Del_Click(object sender, RoutedEventArgs e)
+        {
+            tb1.Text += (tb1.Text.Length == 0) ? "": (
+                tb1.Text[tb1.Text.Length - 1].Equals('+') ||
+                tb1.Text[tb1.Text.Length - 1].Equals('-') ||
+                tb1.Text[tb1.Text.Length - 1].Equals('*') ||
+                tb1.Text[tb1.Text.Length - 1].Equals('/') ? "" : "/");
+        }
 
         private void Ravno_Click(object sender, RoutedEventArgs e) => tb1.Text = Calc(tb1.Text);
-        private void Sqrt_Click(object sender, RoutedEventArgs e) => tb1.Text = Math.Sqrt(double.Parse(Calc(tb1.Text))).ToString();
-        private void Sinus_Click(object sender, RoutedEventArgs e) => tb1.Text = Math.Sin(double.Parse(Calc(tb1.Text)) * (Math.PI / 180)).ToString();
-        private void Arcsin_Click(object sender, RoutedEventArgs e) => tb1.Text = Math.Asin(double.Parse(Calc(tb1.Text))).ToString();
-        private void Cos_Click(object sender, RoutedEventArgs e) => tb1.Text = Math.Cos(double.Parse(Calc(tb1.Text)) * (Math.PI / 180)).ToString();
-        private void Arccos_Click(object sender, RoutedEventArgs e) => tb1.Text = Math.Acos(double.Parse(Calc(tb1.Text))).ToString();
-        private void Tg_Click(object sender, RoutedEventArgs e) => tb1.Text = Math.Tan(double.Parse(Calc(tb1.Text)) * (Math.PI / 180)).ToString();
-        private void Arctg_Click(object sender, RoutedEventArgs e) => tb1.Text = Math.Atan(double.Parse(Calc(tb1.Text))).ToString();
-        private void Ctg_Click(object sender, RoutedEventArgs e) => tb1.Text = (1 / Math.Tan(double.Parse(Calc(tb1.Text)) * (Math.PI / 180))).ToString();
+        private void Sqrt_Click(object sender, RoutedEventArgs e) => tb1.Text = tb1.Text == "" ? "" : Math.Sqrt(double.Parse(Calc(tb1.Text))).ToString();
+        private void Sinus_Click(object sender, RoutedEventArgs e) => tb1.Text = tb1.Text == "" ? "" : Math.Sin(double.Parse(Calc(tb1.Text)) * (Math.PI / 180)).ToString();
+        private void Arcsin_Click(object sender, RoutedEventArgs e) => tb1.Text = tb1.Text == "" ? "" : Math.Asin(double.Parse(Calc(tb1.Text))).ToString();
+        private void Cos_Click(object sender, RoutedEventArgs e) => tb1.Text = tb1.Text == "" ? "" : Math.Cos(double.Parse(Calc(tb1.Text)) * (Math.PI / 180)).ToString();
+        private void Arccos_Click(object sender, RoutedEventArgs e) => tb1.Text = tb1.Text == "" ? "" : Math.Acos(double.Parse(Calc(tb1.Text))).ToString();
+        private void Tg_Click(object sender, RoutedEventArgs e) => tb1.Text = tb1.Text == "" ? "" : Math.Tan(double.Parse(Calc(tb1.Text)) * (Math.PI / 180)).ToString();
+        private void Arctg_Click(object sender, RoutedEventArgs e) => tb1.Text = tb1.Text == "" ? "" : Math.Atan(double.Parse(Calc(tb1.Text))).ToString();
+        private void Ctg_Click(object sender, RoutedEventArgs e) => tb1.Text = tb1.Text == "" ? "" : (1 / Math.Tan(double.Parse(Calc(tb1.Text)) * (Math.PI / 180))).ToString();
         private void Arcctg_Click(object sender, RoutedEventArgs e)
         {
             double x = double.Parse(Calc(tb1.Text));
