@@ -10,7 +10,7 @@ namespace Практическая_3._1__Калькулятор_
     /// </summary>
     public partial class MainWindow : Window
     {
-        string result;
+        private string result;
         public MainWindow()
         {
             InitializeComponent();
