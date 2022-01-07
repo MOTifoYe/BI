@@ -57,11 +57,11 @@ namespace Практическая_3._1__Калькулятор_
 
         private void Del_Click(object sender, RoutedEventArgs e)
         {
-            tb1.Text += (tb1.Text.Length == 0) ? "": (
+            tb1.Text += (tb1.Text.Length == 0) ? "": 
                 tb1.Text[tb1.Text.Length - 1].Equals('+') ||
                 tb1.Text[tb1.Text.Length - 1].Equals('-') ||
                 tb1.Text[tb1.Text.Length - 1].Equals('*') ||
-                tb1.Text[tb1.Text.Length - 1].Equals('/') ? "" : "/");
+                tb1.Text[tb1.Text.Length - 1].Equals('/') ? "" : "/";
         }
 
         private void Ravno_Click(object sender, RoutedEventArgs e) => tb1.Text = Calc(tb1.Text);
