@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:WpfApp3" 
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="300" 
+        Height="400" 
         Width="300"
-        Topmost="True">
+        >
     
     <Grid>
         <Grid.RowDefinitions>
@@ -18,8 +18,81 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <Button 
+                Content="Pass" 
+                Width="50"    
+                Click="Login_Click" />
+            
+        </StackPanel>
 
-        <Grid Grid.Row="3" Background="#ddd">
+        <DataGrid
+            Grid.Row="1"
+            Name="dataGrid1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" MinWidth="100"/>
+                <DataGridTextColumn Header="Оценка" Binding="{Binding Mark}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock 
+                Text="Name" 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Margin="2" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom"/>
+            
+            <TextBox
+                Name="name" 
+                Grid.Row="1" 
+                Grid.Column="0" 
+                Margin="2"/>
+                
+            <TextBlock 
+                Text="Mark" 
+                Grid.Row="0" 
+                Grid.Column="1" 
+                Margin="2" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom"/>
+            
+            <TextBox 
+                Name="mark"
+                Grid.Row="1" 
+                Grid.Column="1" 
+                Margin="2"/>
+
+            <Button 
+                Name="b1" 
+                Click="Add"
+                Content="Add" 
+                Grid.Column="2" 
+                Margin="2" />
+            
+            <Button 
+                Name="b2" 
+                Click="Del"
+                Content="Del" 
+                Grid.Row="1"
+                Grid.Column="2" 
+                Margin="2" />
+        </Grid>
+        
+        <Grid Grid.Row="3" Background="GhostWhite">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition />
@@ -33,20 +106,20 @@
                 FontStyle="{Binding ElementName=comboStyle, Path=SelectedItem.Text}" 
                 FontFamily="{Binding ElementName=comboFamily, Path=SelectedItem.Text}"
                 FontSize="{Binding ElementName=comboSize, Path=SelectedItem.Text}" />
-            
+
             <StackPanel  Width="auto" Height="auto" HorizontalAlignment="Left" VerticalAlignment="Center">
-                
+
                 <ComboBox SelectedIndex="0" Name="comboStyle" Width="80" Height="20">
                     <TextBlock Text="Normal" />
                     <TextBlock Text="Italic" />
                 </ComboBox>
-                
+
                 <ComboBox SelectedIndex="0" Name="comboFamily" Width="80" Height="20">
                     <TextBlock Text="Calibri" />
                     <TextBlock Text="Courier New" />
                     <TextBlock Text="Times New Roman" />
                 </ComboBox>
-                
+
                 <ComboBox SelectedItem="{Binding ElementName=DefaultSize, Mode=OneWay}" Name="comboSize" Width="80" Height="20">
                     <TextBlock Text="8" />
                     <TextBlock Text="9" />
@@ -83,83 +156,6 @@
                     <TextBlock Text="41" />
                 </ComboBox>
             </StackPanel>
-        </Grid>
-
-        <TextBlock 
-            Text="Студенты" 
-            HorizontalAlignment="Left"
-            Margin="5"/>
-
-        <DataGrid
-            Name="dataGrid1"
-            Grid.Row="1">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" MinWidth="75"/>
-                <DataGridTextColumn Header="Оценка" Binding="{Binding Mark}" />
-            </DataGrid.Columns>
-        </DataGrid>
-        
-        <Grid Grid.Row="2">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock 
-                Text="Name" 
-                Grid.Row="0" 
-                Grid.Column="0" 
-                Margin="2" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Bottom"/>
-            
-            <TextBox
-                Name="name" 
-                Grid.Row="1" 
-                Grid.Column="0" 
-                Margin="2">
-                <TextBox.Text>
-                    <Binding Path="Name">
-                        <Binding.ValidationRules>
-                            <ExceptionValidationRule />
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>
-
-            <TextBlock 
-                Text="Mark" 
-                Grid.Row="0" 
-                Grid.Column="1" 
-                Margin="2" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Bottom"/>
-            
-            <TextBox 
-                Name="mark" DataContext="{}"
-                Grid.Row="1" 
-                Grid.Column="1" 
-                Margin="2"/>
-
-            <Button 
-                Name="b1" 
-                Click="Add"
-                Content="Add" 
-                Grid.Row="1"
-                Grid.Column="2" 
-                Margin="2" />
-            
-            <Button 
-                Name="b2" 
-                Click="Del"
-                Content="Del" 
-                Grid.Column="2" 
-                Margin="2" />
         </Grid>
     </Grid>
 </Window>

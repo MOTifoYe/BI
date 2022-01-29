@@ -36,9 +36,9 @@ namespace WpfApp3
                 Student student = new Student { Name = name.Text, Mark = int.Parse(mark.Text) };
                 dataGrid1.Items.Add(student);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Некорректные данные");
+                MessageBox.Show(ex.Message);
             }
 
         }

@@ -31,7 +31,7 @@ namespace WpfApp3
             set
             {
                 if (value < 2 || value > 5)
-                    throw new ArgumentOutOfRangeException($"{nameof(value)} must be between 2 and 5.");
+                    throw new ApplicationException($"Значение оценки должно быть от 2 до 5");
                 _mark = value;
             }
         }
