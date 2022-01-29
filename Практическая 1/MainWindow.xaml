@@ -5,46 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Практическая №1" Height="520" Width="420" FontSize="20" FontFamily="Arial">
+        Title="Практическая №1" Height="426" Width="420" FontSize="20" FontFamily="Arial"
+        >
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition Height="2*" />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
 
-        <Label Content="Введи число" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-        <TextBox x:Name="textIn" Grid.Row="1" Background="#FFF0F0FF" VerticalAlignment="Center" Width="300"/>
-        <Label Grid.Row="2" Content="В какую систему перевести число" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-        <GroupBox Grid.Row="3" Header="Системы счисления" Padding="13"  HorizontalAlignment="Center" VerticalAlignment="Top">
-            <StackPanel>
-                <RadioButton x:Name="x2" Content="Двоичная"/>
-                <RadioButton x:Name="x8" Content="Восьмеричная" Margin="0 8 0 0"/>
-            </StackPanel>
-        </GroupBox>
-        <Grid Grid.Row="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-            <Label Content="Результат:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
-            <Label x:Name="textOut" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        </Grid>
+    <StackPanel Margin="20">
+        
+            <Label Content="Введи число" HorizontalAlignment="Center" />
+            <TextBox x:Name="textIn" Background="WhiteSmoke" Margin="30 10"/>
+        
+            <Label Grid.Row="2" Content="В какую систему перевести число" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <GroupBox Grid.Row="3" Header="Системы счисления" Padding="13"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                <StackPanel>
+                    <RadioButton x:Name="x2" Content="Двоичная"/>
+                    <RadioButton x:Name="x8" Content="Восьмеричная" Margin="0 8 0 0"/>
+                </StackPanel>
+            </GroupBox>
+        
 
-        <Grid Grid.Row="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Button Content="Вычислить" Click="Вычислить" Padding="8" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Grid.Column="1" Content="Сброс" Click="Сброс" Padding="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Grid.Column="2" Content="Выход" Click="Выход" Padding="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Grid>
+        <StackPanel Margin="0 20" Orientation="Horizontal">
+            <Label Content="Результат:" VerticalContentAlignment="Center"/>
+            <Label x:Name="textOut" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
 
-    </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Вычислить" Click="Вычислить" Padding="8" Margin="5 0" />
+            <Button Content="Сброс" Click="Сброс" Padding="8" Margin="5 0" />
+            <Button Content="Выход" Click="Выход" Padding="8" Margin="5 0" />
+        </StackPanel>
+    </StackPanel>
+
+
 </Window>
