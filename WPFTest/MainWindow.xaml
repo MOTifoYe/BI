@@ -21,7 +21,7 @@
         <StackPanel Orientation="Horizontal" Margin="2">
             <Button 
                 Content="Pass" 
-                Width="50"    
+                Width="50"   
                 Click="Login_Click" />
             
         </StackPanel>

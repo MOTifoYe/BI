@@ -52,6 +52,7 @@ namespace WpfApp3
         {
             PasswordWindow passwordWindow = new PasswordWindow();
 
+
             if (passwordWindow.ShowDialog() == true)
             {
                 if (passwordWindow.Password == "123")
@@ -61,7 +62,7 @@ namespace WpfApp3
             }
             else
             {
-                MessageBox.Show("Авторизация не пройдена");
+                //MessageBox.Show("Авторизация не пройдена");
             }
         }
 
