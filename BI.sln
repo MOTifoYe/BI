@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HitMe", "HitMe\HitMe.csproj", "{79796B9F-49A8-47EA-A9F1-DCD5696330F4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{DC446A23-1C9E-4C5A-A16B-2BD5A9F481E9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator", "Generator\Generator.csproj", "{680E9FA7-D586-4196-9368-197CAA8B7847}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HitMe", "HitMe\HitMe.csproj", "{79796B9F-49A8-47EA-A9F1-DCD5696330F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTest", "WPFTest\WPFTest.csproj", "{333C0998-CC13-4599-847C-F2F9B5AD15E5}"
 EndProject
@@ -21,24 +19,22 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая 2.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая 3.1 (Калькулятор)", "Практическая 3.1 (Калькулятор)\Практическая 3.1 (Калькулятор).csproj", "{7580E51F-8AEE-4E87-B3C7-B007CB782194}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTestResources", "WpfTestResources\WpfTestResources.csproj", "{D01F3B3B-0D7B-4D09-94DC-029DA97A4ADA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{79796B9F-49A8-47EA-A9F1-DCD5696330F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79796B9F-49A8-47EA-A9F1-DCD5696330F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79796B9F-49A8-47EA-A9F1-DCD5696330F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79796B9F-49A8-47EA-A9F1-DCD5696330F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC446A23-1C9E-4C5A-A16B-2BD5A9F481E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC446A23-1C9E-4C5A-A16B-2BD5A9F481E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC446A23-1C9E-4C5A-A16B-2BD5A9F481E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC446A23-1C9E-4C5A-A16B-2BD5A9F481E9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{680E9FA7-D586-4196-9368-197CAA8B7847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{680E9FA7-D586-4196-9368-197CAA8B7847}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{680E9FA7-D586-4196-9368-197CAA8B7847}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{680E9FA7-D586-4196-9368-197CAA8B7847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79796B9F-49A8-47EA-A9F1-DCD5696330F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79796B9F-49A8-47EA-A9F1-DCD5696330F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79796B9F-49A8-47EA-A9F1-DCD5696330F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79796B9F-49A8-47EA-A9F1-DCD5696330F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{333C0998-CC13-4599-847C-F2F9B5AD15E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{333C0998-CC13-4599-847C-F2F9B5AD15E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{333C0998-CC13-4599-847C-F2F9B5AD15E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +59,10 @@ Global
 		{7580E51F-8AEE-4E87-B3C7-B007CB782194}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7580E51F-8AEE-4E87-B3C7-B007CB782194}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7580E51F-8AEE-4E87-B3C7-B007CB782194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D01F3B3B-0D7B-4D09-94DC-029DA97A4ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D01F3B3B-0D7B-4D09-94DC-029DA97A4ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D01F3B3B-0D7B-4D09-94DC-029DA97A4ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D01F3B3B-0D7B-4D09-94DC-029DA97A4ADA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
