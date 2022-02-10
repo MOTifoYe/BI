@@ -15,7 +15,7 @@
             <GradientStop Color="Tan" Offset="0.5" />
             <GradientStop Color="White" Offset="1" />
         </GradientStopCollection>
-    </LinearGradientBrush
+    </LinearGradientBrush>
 
     <Style x:Key="LabelMainStyle" TargetType="{x:Type Label}" >
     <Setter Property="Background" Value="SandyBrown" />
@@ -34,8 +34,8 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Margin" Value="10" />
         <Setter Property="Padding" Value="0" />
-    </Style
-           
+    </Style>
+
     <Style x:Key="ButtonMainStyle" TargetType="Button">
     <Setter Property="Margin" Value="10" />
     <Setter Property="FontFamily" Value="KacstBook" />

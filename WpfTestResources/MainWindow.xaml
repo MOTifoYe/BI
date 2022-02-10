@@ -15,8 +15,7 @@
         <Border x:Name="MainBorder"
                 Style="{DynamicResource BorderMainStyle}" >
 
-            <Grid x:Name="MainGrid" 
-                  Style="{DynamicResource GridMainStyle}" >
+            <Grid x:Name="MainGrid" >
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1.2*"/>
