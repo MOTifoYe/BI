@@ -94,6 +94,7 @@
     <Style x:Key="TextBlockComboBox" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockMainStyle}">
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="FontFamily" Value="Roboto" />
+        <Setter Property="Margin" Value="0" />
         <Setter Property="FontSize" Value="21" />
     </Style>
 

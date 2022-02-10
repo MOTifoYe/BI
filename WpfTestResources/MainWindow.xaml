@@ -92,6 +92,7 @@
                                Grid.Row="0"
                                Style="{DynamicResource TextBlockList}" 
                                HorizontalAlignment="Center"
+                               Margin="0"
                                Text="Your age" />
 
                     <ComboBox x:Name="comboAge"
