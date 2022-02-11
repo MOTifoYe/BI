@@ -26,7 +26,27 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
-                <Grid>
+                <CheckBox x:Name="c1" 
+                          IsChecked="True"
+                          HorizontalAlignment="Right"
+                          VerticalAlignment="Top"
+                          Grid.Column="1"
+                          Margin="5 5 80 5" 
+                          />
+                
+                <ToggleButton x:Name="toggleTheme" 
+                              Grid.Column="1"
+                              HorizontalAlignment="Right"
+                              VerticalAlignment="Top"
+                              Checked="toggleTheme_Checked"
+                              Unchecked="toggleTheme_Unchecked"
+                              IsEnabled="{Binding ElementName=c1, Path=IsChecked}"
+                              Style="{DynamicResource ToggleThemeButton}" 
+                              />
+
+                <Grid Grid.Row="0"
+                      Grid.Column="0" >
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="1.5*"/>
@@ -80,7 +100,9 @@
 
                 </Grid>
 
-                <Grid Grid.Column="1">
+                <Grid Grid.Row="0"
+                      Grid.Column="1" >
+                    
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition />
@@ -118,37 +140,37 @@
                             </Grid.RowDefinitions>
 
 
-                            <Button 
+                            <Button x:Name="btnGetPassword"
                                     Content="Get password" 
                                     Grid.Column="0"
                                     Grid.Row="0"
-                                    Style="{DynamicResource ButtonMainStyle}" />
+                                    Style="{DynamicResource ButtonStyle}" />
                             
                             <Button x:Name="btnClose"
                                     Content="Close" 
                                     Grid.Column="1"
                                     Grid.Row="0"
                                     Click="btnClose_Click"
-                                    Style="{DynamicResource ButtonMainStyle}" />
+                                    Style="{DynamicResource ButtonStyle}" />
 
-                            <Button 
+                            <Button x:Name="btnBrowser"
                                     Content="Open in browser" 
                                     Grid.Column="0"
                                     Grid.Row="1"
-                                    Style="{DynamicResource ButtonMainStyle}" />
+                                    Style="{DynamicResource ButtonStyle}" />
 
-                            <Button 
+                            <Button x:Name="btnPress"
                                     Content="Press the button" 
                                     Grid.Column="1"
                                     Grid.Row="1"
-                                    Style="{DynamicResource ButtonMainStyle}" />
+                                    Style="{DynamicResource ButtonStyle}" />
 
                         </Grid>
                     </Border>
                 </Grid>
 
-                <TextBlock x:Name="text1"
-                           Grid.Row="1"
+                <TextBlock x:Name="textblockFooter"
+                           Grid.Row="2"
                            Grid.ColumnSpan="2"
                            Style="{DynamicResource TextBlockMainStyle}"
                            >
