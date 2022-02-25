@@ -5,29 +5,13 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <StartupObject>WPFTest.App</StartupObject>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <Optimize>False</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\g.jpg" />
-    <None Remove="g.png" />
+	  <Resource Include="Assets\g.png" />
   </ItemGroup>
-
+	
   <ItemGroup>
-    <ApplicationDefinition Include="Assets\g.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ApplicationDefinition>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="5.0.1" />
-    <PackageReference Include="DevExpressMvvm" Version="21.1.5" />
     <PackageReference Include="MahApps.Metro" Version="2.4.9" />
   </ItemGroup>
 
