@@ -1,197 +1,161 @@
-﻿<mah:MetroWindow x:Class="WPFTest.MainWindow"
+﻿<Window x:Class="WpfApp3.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
-        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        xmlns:theming="urn:controlzex"
-        xmlns:local="clr-namespace:WPFTest" 
-        mc:Ignorable="d" 
-        Height="500" Width="600" Icon="Assets/g.png" >
+        xmlns:local="clr-namespace:WpfApp3" 
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="400" 
+        Width="300"
+        >
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
 
-    <Grid x:Name="MainGrid">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <Button 
+                Content="Pass" 
+                Width="50"   
+                Click="Login_Click" />
+            
+        </StackPanel>
+
+        <DataGrid
+            Grid.Row="1"
+            Name="dataGrid1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" MinWidth="100"/>
+                <DataGridTextColumn Header="Оценка" Binding="{Binding Mark}" />
+            </DataGrid.Columns>
+        </DataGrid>
 
 
-        <!-- First / Left grid -->
-        <Grid>
+
+        <Grid Grid.Row="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
                 <RowDefinition/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-
-            <!-- Button panel -->
-            <StackPanel Orientation="Horizontal" Margin="2">
-
-                <Button Content="Close" 
-                        Click="Close_Click" />
-                <Button Content="Pass" 
-                        Click="Login_Click" />
-
-
-            </StackPanel>
-
-            <!-- DataGrid Students -->
-            <DataGrid Name="dataGrid1" Grid.Row="1" SelectionMode="Single" IsReadOnly="True">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Имя" Binding="{Binding Name}" MinWidth="75"/>
-                    <DataGridTextColumn Header="Оценка" Binding="{Binding Mark}" MinWidth="75"/>
-                </DataGrid.Columns>
-            </DataGrid>
-
-
-            <!-- Edit panel -->
-            <Grid Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-
-                <TextBlock Text="Name" 
-                           Grid.Row="0" 
-                           Grid.Column="0" 
-                           Margin="2" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Bottom"/>
-
-                <TextBox Name="name" 
-                         Grid.Row="1" 
-                         Grid.Column="0" 
-                         Margin="2"/>
-
-                <TextBlock Text="Mark" 
-                           Grid.Row="0" 
-                           Grid.Column="1" 
-                           Margin="2" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Bottom"/>
-
-                <TextBox Name="mark"
-                         Grid.Row="1" 
-                         Grid.Column="1" 
-                         Margin="2"/>
-
-                <Button Name="b1" 
-                        Click="Add"
-                        Content="Add" 
-                        Grid.Column="2" 
-                        Margin="2" />
-
-                <Button Name="b2" 
-                        Click="Del"
-                        Content="Del" 
-                        Grid.Row="1"
-                        Grid.Column="2" 
-                        Margin="2" />
-            </Grid>
-
-            <!-- Binding text -->
-            <Grid Grid.Row="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <Border Grid.Column="1" 
-                        Margin="2"
-                        BorderBrush="Aqua"
-                        BorderThickness="1"
-                        CornerRadius="8"
-                        >
-                    <TextBlock 
-                               Text="Some Text"
-                               VerticalAlignment="Center" 
-                               HorizontalAlignment="Center"  
-                               FontStyle="{Binding ElementName=comboStyle, Path=SelectedItem.Text}" 
-                               FontFamily="{Binding ElementName=comboFamily, Path=SelectedItem.Text}"
-                               FontSize="{Binding ElementName=comboSize, Path=SelectedItem.Text}" />
-                </Border>
-
-                <!-- ComboBoxes -->
-                <StackPanel  Width="auto" Height="auto" HorizontalAlignment="Left" VerticalAlignment="Center">
-
-                    <ComboBox x:Name="comboStyle" SelectedIndex="0" Width="80" Height="20">
-                        <TextBlock Text="Normal" />
-                        <TextBlock Text="Italic" />
-                    </ComboBox>
-
-                    <ComboBox x:Name="comboFamily" SelectedIndex="0" Width="80" Height="20">
-                        <TextBlock Text="Calibri" />
-                        <TextBlock Text="Courier New" />
-                        <TextBlock Text="Times New Roman" />
-                    </ComboBox>
-
-                    <ComboBox x:Name="comboSize" SelectedItem="{Binding ElementName=DefaultSize, Mode=OneWay}" Width="80" Height="20">
-                        <TextBlock Text="8" />
-                        <TextBlock Text="9" />
-                        <TextBlock Text="10" />
-                        <TextBlock Text="11" />
-                        <TextBlock Text="12" Name="DefaultSize" />
-                        <TextBlock Text="13" />
-                        <TextBlock Text="14" />
-                        <TextBlock Text="15" />
-                        <TextBlock Text="16" />
-                        <TextBlock Text="17" />
-                        <TextBlock Text="18" />
-                        <TextBlock Text="19" />
-                        <TextBlock Text="21" />
-                        <TextBlock Text="22" />
-                        <TextBlock Text="23" />
-                        <TextBlock Text="24" />
-                        <TextBlock Text="25" />
-                        <TextBlock Text="26" />
-                        <TextBlock Text="27" />
-                        <TextBlock Text="28" />
-                        <TextBlock Text="29" />
-                        <TextBlock Text="30" />
-                        <TextBlock Text="31" />
-                        <TextBlock Text="32" />
-                        <TextBlock Text="33" />
-                        <TextBlock Text="34" />
-                        <TextBlock Text="35" />
-                    </ComboBox>
-                </StackPanel>
-            </Grid>
-        </Grid>
-
-        <!-- Second / Right grid -->
-        <Grid Grid.Column="1" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Test object in MainWindow.cs" FontSize="19" FontWeight="Bold" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <StackPanel Grid.Row="1" VerticalAlignment="Top">
-                <TextBox Name="tb" Width="220" Margin="5" HorizontalContentAlignment="Center"></TextBox>
-                <ListBox Name="lb" Height="100" SelectionChanged="PrintText" SelectionMode="Single">
-                    <ListBoxItem>Item 1</ListBoxItem>
-                    <ListBoxItem>Item 2</ListBoxItem>
-                    <ListBoxItem>Item 3</ListBoxItem>
-                    <ListBoxItem>Item 4</ListBoxItem>
-                    <ListBoxItem>Item 5</ListBoxItem>
-                    <ListBoxItem>Item 6</ListBoxItem>
-                    <ListBoxItem>Item 7</ListBoxItem>
-                    <ListBoxItem>Item 8</ListBoxItem>
-                    <ListBoxItem>Item 9</ListBoxItem>
-                    <ListBoxItem>Item 10</ListBoxItem>
-                </ListBox>
+            <TextBlock 
+                Text="Name" 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Margin="2" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom"/>
+            
+            <TextBox
+                Name="name" 
+                Grid.Row="1" 
+                Grid.Column="0" 
+                Margin="2"/>
+                
+            <TextBlock 
+                Text="Mark" 
+                Grid.Row="0" 
+                Grid.Column="1" 
+                Margin="2" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom"/>
+            
+            <TextBox 
+                Name="mark"
+                Grid.Row="1" 
+                Grid.Column="1" 
+                Margin="2"/>
 
-
-            </StackPanel>
-
+            <Button 
+                Name="b1" 
+                Click="Add"
+                Content="Add" 
+                Grid.Column="2" 
+                Margin="2" />
+            
+            <Button 
+                Name="b2" 
+                Click="Del"
+                Content="Del" 
+                Grid.Row="1"
+                Grid.Column="2" 
+                Margin="2" />
         </Grid>
+        
+        <Grid Grid.Row="3" Background="GhostWhite">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
 
+            <TextBlock
+                Grid.Column="1" 
+                Text="Some Text"
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center"  
+                FontStyle="{Binding ElementName=comboStyle, Path=SelectedItem.Text}" 
+                FontFamily="{Binding ElementName=comboFamily, Path=SelectedItem.Text}"
+                FontSize="{Binding ElementName=comboSize, Path=SelectedItem.Text}" />
+
+            <StackPanel  Width="auto" Height="auto" HorizontalAlignment="Left" VerticalAlignment="Center">
+
+                <ComboBox SelectedIndex="0" Name="comboStyle" Width="80" Height="20">
+                    <TextBlock Text="Normal" />
+                    <TextBlock Text="Italic" />
+                </ComboBox>
+
+                <ComboBox SelectedIndex="0" Name="comboFamily" Width="80" Height="20">
+                    <TextBlock Text="Calibri" />
+                    <TextBlock Text="Courier New" />
+                    <TextBlock Text="Times New Roman" />
+                </ComboBox>
+
+                <ComboBox SelectedItem="{Binding ElementName=DefaultSize, Mode=OneWay}" Name="comboSize" Width="80" Height="20">
+                    <TextBlock Text="8" />
+                    <TextBlock Text="9" />
+                    <TextBlock Text="10" />
+                    <TextBlock Text="11" />
+                    <TextBlock Text="12" />
+                    <TextBlock Text="13" />
+                    <TextBlock Text="14" />
+                    <TextBlock Text="15" />
+                    <TextBlock Text="16" />
+                    <TextBlock Text="17" />
+                    <TextBlock Text="18" />
+                    <TextBlock Text="19" />
+                    <TextBlock Text="21" Name="DefaultSize" />
+                    <TextBlock Text="22" />
+                    <TextBlock Text="23" />
+                    <TextBlock Text="24" />
+                    <TextBlock Text="25" />
+                    <TextBlock Text="26" />
+                    <TextBlock Text="27" />
+                    <TextBlock Text="28" />
+                    <TextBlock Text="29" />
+                    <TextBlock Text="30" />
+                    <TextBlock Text="31" />
+                    <TextBlock Text="32" />
+                    <TextBlock Text="33" />
+                    <TextBlock Text="34" />
+                    <TextBlock Text="35" />
+                    <TextBlock Text="36" />
+                    <TextBlock Text="37" />
+                    <TextBlock Text="38" />
+                    <TextBlock Text="39" />
+                    <TextBlock Text="40" />
+                    <TextBlock Text="41" />
+                </ComboBox>
+            </StackPanel>
+        </Grid>
     </Grid>
-</mah:MetroWindow>
+</Window>

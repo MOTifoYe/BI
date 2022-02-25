@@ -1,12 +1,11 @@
 ﻿using System.Windows;
-using MahApps.Metro.Controls;
 
-namespace WPFTest
+namespace WpfApp3
 {
     /// <summary>
     /// Логика взаимодействия для PasswordWindow.xaml
     /// </summary>
-    public partial class PasswordWindow : MetroWindow
+    public partial class PasswordWindow : Window
     {
         public PasswordWindow()
         {
