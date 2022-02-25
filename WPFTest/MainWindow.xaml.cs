@@ -1,29 +1,32 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+using System;
 using System.Windows;
+using System.Windows.Controls;
 
-
-namespace WpfApp3
+namespace WPFTest
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Add(object s, RoutedEventArgs e)
+        private async void Add(object s, RoutedEventArgs e)
         {
             try
             {
-                Student student = new Student { Name = name.Text, Mark = int.Parse(mark.Text) };
+                Student student = new() { Name = name.Text, Mark = mark.Text };
                 dataGrid1.Items.Add(student);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                await this.ShowMessageAsync("Некорректные данные", ex.Message, 
+                    settings: new MetroDialogSettings() { AnimateHide=false, AnimateShow=false});
             }
 
         }
@@ -33,55 +36,26 @@ namespace WpfApp3
             dataGrid1.Items.Remove(dataGrid1.SelectedItem);
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private async void Login_Click(object sender, RoutedEventArgs e)
         {
-            PasswordWindow passwordWindow = new PasswordWindow();
+            string? result = await this.ShowInputAsync("Авторизация", "Введите пароль");
 
+            if (string.IsNullOrWhiteSpace(result)) return;
 
-            if (passwordWindow.ShowDialog() == true)
-            {
-                if (passwordWindow.Password == "123")
-                    MessageBox.Show("Авторизация пройдена");
-                else
-                    MessageBox.Show("Неверный пароль");
-            }
+            if (result == "123")
+                await this.ShowMessageAsync("Авторизация", "Авторизация пройдена");
             else
-            {
-                //MessageBox.Show("Авторизация не пройдена");
-            }
+                await this.ShowMessageAsync("Авторизация", "Неверный пароль");
+        }
+        void PrintText(object sender, SelectionChangedEventArgs args)
+        {
+            ListBoxItem lbi = ((ListBox)sender).SelectedItem as ListBoxItem;
+            tb.Text = $"You selected {lbi.Content}.";
         }
 
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
-
-    //class MainViewModel : BaseVM
-    //{
-    //    private ObservableCollection<Student> _students = new ObservableCollection<Student>();
-    //    public ObservableCollection<Student> Students { get { return _students; } }
-    //    public ICollectionView StudentsView { get; set; }
-
-    //    public MainViewModel()
-    //    {
-
-
-    //    }
-
-    //    public ICommand Add
-    //    {
-    //        get
-    //        {
-    //            return new DelegateCommand(() =>
-    //            {
-    //                Students.Add(new Student() { Name = "ds", Group = "234" });
-    //            });
-    //        }
-    //    }
-
-
-    //    //private void Add(object s, RoutedEventArgs e)
-    //    //{
-    //    //    Student student = new Student { Name = name.Text, Group = group.Text };
-    //    //    Students.Add(student);
-    //    //}
-
-    //}
 }
