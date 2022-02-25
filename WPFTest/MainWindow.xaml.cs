@@ -11,6 +11,8 @@ namespace WPFTest
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        MetroDialogSettings metroDialogSettings = new MetroDialogSettings() { AnimateHide = false, AnimateShow = false };
+
         public MainWindow()
         {
             InitializeComponent();
@@ -25,8 +27,7 @@ namespace WPFTest
             }
             catch (Exception ex)
             {
-                await this.ShowMessageAsync("Некорректные данные", ex.Message,
-                    settings: new MetroDialogSettings() { AnimateHide = false, AnimateShow = false });
+                await this.ShowMessageAsync("Некорректные данные", ex.Message, settings: metroDialogSettings);
             }
 
         }
@@ -38,14 +39,14 @@ namespace WPFTest
 
         private async void Login_Click(object sender, RoutedEventArgs e)
         {
-            string? result = await this.ShowInputAsync("Авторизация", "Введите пароль");
+            string? result = await this.ShowInputAsync("Авторизация", "Введите пароль", settings: metroDialogSettings);
 
             if (string.IsNullOrWhiteSpace(result)) return;
 
             if (result == "123")
-                await this.ShowMessageAsync("Авторизация", "Авторизация пройдена");
+                await this.ShowMessageAsync("Авторизация", "Авторизация пройдена", settings: metroDialogSettings);
             else
-                await this.ShowMessageAsync("Авторизация", "Неверный пароль");
+                await this.ShowMessageAsync("Авторизация", $"Вы ввели: {result}", settings: metroDialogSettings);
         }
         void PrintText(object sender, SelectionChangedEventArgs args)
         {
