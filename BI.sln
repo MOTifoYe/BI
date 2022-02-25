@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator", "Generator\Gene
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HitMe", "HitMe\HitMe.csproj", "{79796B9F-49A8-47EA-A9F1-DCD5696330F4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFTest", "WPFTest\WPFTest.csproj", "{333C0998-CC13-4599-847C-F2F9B5AD15E5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая 1", "Практическая 1\Практическая 1.csproj", "{B894691C-37C5-413C-9391-EE62AD3D14B9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "меню и панели", "меню и панели\меню и панели.csproj", "{D9052E95-EE5F-4971-B58C-0069D229C2BA}"
@@ -20,6 +18,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTestResources", "WpfTestResources\WpfTestResources.csproj", "{D01F3B3B-0D7B-4D09-94DC-029DA97A4ADA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorPicker", "ColorPicker\ColorPicker.csproj", "{12E5AF76-AC08-49C1-86A8-F8412382821D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFTest", "WPFTest\WPFTest.csproj", "{64712DFA-7598-4F97-86AD-F708F73DD744}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vsd", "vsd\vsd.csproj", "{678B16DF-A76D-4F17-A4AC-76051A830780}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +37,6 @@ Global
 		{79796B9F-49A8-47EA-A9F1-DCD5696330F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79796B9F-49A8-47EA-A9F1-DCD5696330F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79796B9F-49A8-47EA-A9F1-DCD5696330F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{333C0998-CC13-4599-847C-F2F9B5AD15E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{333C0998-CC13-4599-847C-F2F9B5AD15E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{333C0998-CC13-4599-847C-F2F9B5AD15E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{333C0998-CC13-4599-847C-F2F9B5AD15E5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B894691C-37C5-413C-9391-EE62AD3D14B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B894691C-37C5-413C-9391-EE62AD3D14B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B894691C-37C5-413C-9391-EE62AD3D14B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +61,14 @@ Global
 		{12E5AF76-AC08-49C1-86A8-F8412382821D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12E5AF76-AC08-49C1-86A8-F8412382821D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12E5AF76-AC08-49C1-86A8-F8412382821D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64712DFA-7598-4F97-86AD-F708F73DD744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64712DFA-7598-4F97-86AD-F708F73DD744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64712DFA-7598-4F97-86AD-F708F73DD744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64712DFA-7598-4F97-86AD-F708F73DD744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{678B16DF-A76D-4F17-A4AC-76051A830780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678B16DF-A76D-4F17-A4AC-76051A830780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678B16DF-A76D-4F17-A4AC-76051A830780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678B16DF-A76D-4F17-A4AC-76051A830780}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
