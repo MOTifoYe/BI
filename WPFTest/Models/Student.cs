@@ -4,15 +4,27 @@ namespace WPFTest
 {
     class Student
     {
+        private double _nameD = double.NaN;
         private string _name = "DefaultName";
         public string Name
         {
-            get => _name;
+            get
+            {
+                if (double.IsNaN(_nameD))
+                {
+                    return _name;
+                }
+                return _nameD.ToString();
+            }
             internal set
             {
                 if (String.IsNullOrEmpty(value))
                     throw new ArgumentException("Укажите имя", value);
-                _name = value;
+                var res = Double.TryParse(value, out double NameD);
+                if (res)
+                    _nameD = NameD;
+                if (!res)
+                    _name = value;
             }
         }
         private int _mark;
