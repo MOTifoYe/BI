@@ -44,7 +44,7 @@ namespace WPFTest
             dataGrid1.Items.Remove(dataGrid1.SelectedItem);
         }
 
-        private async void Login_Click(object sender, RoutedEventArgs e)
+        private async void Signup_Click(object sender, RoutedEventArgs e)
         {
             string? result = await this.ShowInputAsync("Авторизация", "Введите пароль", settings: metroDialogSettings);
 
