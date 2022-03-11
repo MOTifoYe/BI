@@ -16,6 +16,13 @@ namespace WPFTest
         public MainWindow()
         {
             InitializeComponent();
+            for (int i = 1; i < 100; i++)
+            {
+                ListBoxItem listBoxItem = new ListBoxItem();
+                listBoxItem.Content = $"Item {i}";
+                lbEx.Items.Add(listBoxItem);
+
+            }
         }
 
         private async void Add(object s, RoutedEventArgs e)
@@ -48,10 +55,11 @@ namespace WPFTest
             else
                 await this.ShowMessageAsync("Авторизация", $"Вы ввели: {result}", settings: metroDialogSettings);
         }
+
         void PrintText(object sender, SelectionChangedEventArgs args)
         {
             ListBoxItem lbi = ((ListBox)sender).SelectedItem as ListBoxItem;
-            tb.Text = $"You selected {lbi.Content}.";
+            tbEx.Text = $"You selected {lbi.Content}.";
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
