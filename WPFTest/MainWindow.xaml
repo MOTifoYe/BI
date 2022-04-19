@@ -7,9 +7,12 @@
         xmlns:local="clr-namespace:WPFTest"
         mc:Ignorable="d" 
         Height="500" 
-        Width="600" 
+        Width="800" 
         Icon="Assets/g.png" 
         >
+    <!--<Window.Resources>
+        <local:mediaLists x:Key="mediaLists"/>
+    </Window.Resources>-->
 
     <Grid x:Name="MainGrid">
         <Grid.ColumnDefinitions>
@@ -42,7 +45,7 @@
             </WrapPanel>
 
             <!-- DataGrid Students -->
-            <DataGrid Name="dataGrid1" Grid.Row="1" SelectionMode="Single" IsReadOnly="True">
+            <DataGrid Name="dgStudent" Grid.Row="1" SelectionMode="Single" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Имя" Binding="{Binding Name}" MinWidth="75"/>
                     <DataGridTextColumn Header="Оценка" Binding="{Binding Mark}" MinWidth="75"/>
@@ -157,24 +160,93 @@
         </Grid>
 
         <!-- Second / Right grid -->
+        
         <Grid Grid.Column="1" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Test object in MainWindow.cs" 
-                       FontSize="19" 
-                       FontWeight="Bold" 
-                       Margin="10"
-                       HorizontalAlignment="Center" 
-                       VerticalAlignment="Top"/>
-            
-            <StackPanel Grid.Row="1" VerticalAlignment="Top">
-                <TextBlock Name="tbEx" Width="220" Margin="5" TextAlignment="Center" />
-                <ListBox Name="lbEx" Height="100" SelectionChanged="PrintText" SelectionMode="Single"/>
+            <!--ListBox. Example Microsoft-->
+            <StackPanel Grid.Row="0" VerticalAlignment="Top">
+                <TextBlock Name="tbEx" 
+                           Margin="5" 
+                           FontSize="14"
+                           TextAlignment="Center" />
+                <ListBox Name="lbEx" 
+                         Height="100" 
+                         SelectionChanged="PrintText"
+                         SelectionMode="Single"/>
             </StackPanel>
 
+            <!--DataGrid.Media-->
+            <TextBlock Name="tbAlbumTitle" 
+                       Text="Album Title" 
+                       Grid.Row="1"
+                       TextAlignment="Center" 
+                       Margin="5" FontSize="14" FontWeight="Bold"/>
+
+            <DataGrid Name="dgMedia" 
+                      Grid.Row="2"
+                      SelectionMode="Single" 
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False" 
+                      ItemsSource="{Binding MediaLists}"
+                      SelectedItem="{Binding SelectedMedia}">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" MinWidth="50"/>
+                    <DataGridTextColumn Header="Вокалист" Binding="{Binding Path=Vocalist}" MinWidth="150"/>
+                    <DataGridTextColumn Header="Альбом" Binding="{Binding Path=Album}" MinWidth="150"/>
+                </DataGrid.Columns>
+                    
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Вокалист: "/>
+                                <TextBlock Text="{Binding Path=Vocalist}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Альбом: "/>
+                                <TextBlock Text="{Binding Path=Album}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+            </DataGrid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Name="tbVocalist" 
+                            Grid.Column="0" 
+                            Margin="2" 
+                            mah:TextBoxHelper.Watermark="Вокалист" />
+                <TextBox Name="tbAlbum" 
+                            Grid.Column="1" 
+                            Margin="2" 
+                            mah:TextBoxHelper.Watermark="Альбом" />
+            </Grid>
+                
+            <Button Name="btAddMedia" 
+                    Content="ADD" 
+                    Grid.Row="4"
+                    Margin="0 2"
+                    Click="btAddMediaList_Click" />
+
+            <Button Name="btRemoveMedia" 
+                    Content="Remove" 
+                    Grid.Row="5"
+                    Margin="0 2"
+                    Click="btRemoveMedia_Click" />
+           
         </Grid>
 
     </Grid>
