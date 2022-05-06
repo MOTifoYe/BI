@@ -1,0 +1,97 @@
+<Window x:Class="VkNet.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VkNet.Wpf"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Главная" Height="920" Width="1280" Initialized="Window_Initialized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+            
+
+        <DataGrid x:Name="TrV" 
+                  Grid.Row="0"
+                  SelectionMode="Single" 
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False" 
+                      ItemsSource="{Binding MFriendList}"
+                      SelectedItem="{Binding SelectedFriend}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" MinWidth="50"/>
+                <DataGridTextColumn Header="Nsme" Binding="{Binding Path=FirstName}" MinWidth="50"/>
+                <DataGridTextColumn Header="Nsme" Binding="{Binding Path=LastName}" MinWidth="50"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="ID: "/>
+                            <TextBlock Text="{Binding Path=Id}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Имя: "/>
+                            <TextBlock Text="{Binding Path=FirstName}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Фамилия: "/>
+                            <TextBlock Text="{Binding Path=LastName}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Online: "/>
+                            <TextBlock Text="{Binding Path=Online}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Статус: "/>
+                            <TextBlock Text="{Binding Path=Status}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="City: "/>
+                            <TextBlock Text="{Binding Path=City.Title}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Sex: "/>
+                            <TextBlock Text="{Binding Path=Sex}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="DR: "/>
+                            <TextBlock Text="{Binding Path=BirthDate}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Music: "/>
+                            <TextBlock Text="{Binding Path=Music}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="StatusAudio: "/>
+                            <TextBlock Text="{Binding Path=StatusAudio}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Phone: "/>
+                            <TextBlock Text="{Binding Path=Phone}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="StatusAudio: "/>
+                            <TextBlock Text="{Binding Path=StatusAudio}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="StatusAudio: "/>
+                            <TextBlock Text="{Binding Path=StatusAudio}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+
+        <StackPanel Grid.Row="1" Width="300" VerticalAlignment="Center">
+            <Button Content="Показать список" Click="ShowFriends" />
+            <Button Content="Очистить список" Click="ClearTrV" />
+            
+            <Button Content="mes" Click="SendMessage" />
+            
+        </StackPanel>
+    </Grid>
+</Window>
